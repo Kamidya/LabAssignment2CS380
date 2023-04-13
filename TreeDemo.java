@@ -53,11 +53,22 @@ class BinarySearchTree{
 
    
    
-   /*
-   in-order traversal
-   */
+   /**
+    * Sorts tree in order of insertion
+    * @param root Node to be sorted.
+    */
    public void inOrderTraversal(Node root){
-      //implement me
+      if (root == null)
+         return;
+
+      /* first recur on left child */
+      inOrderTraversal(root.left);
+
+      /* then print the data of node */
+      System.out.print(root.value + " ");
+
+      /* now recur on right child */
+      inOrderTraversal(root.right);
    }
    
    
