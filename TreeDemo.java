@@ -97,7 +97,7 @@ class BinarySearchTree{
 
       //second recursion on right child
       postOrderTraversal(root.right);
-      
+
       //prints value of node
       System.out.print(root.value + " ");
 
@@ -105,13 +105,31 @@ class BinarySearchTree{
    
    
    
-   /*
-   a method to find the node in the tree
-   with a specific value
-   */
+   /**
+    * Finds node with specific value in tree
+    * @param root Node to be found.
+    * @param key Int value to be found.
+    * @return boolean value if node has been found.
+    */
    public boolean find(Node root, int key){
-	  //implement me
-      return false;           
+      if (root == null)
+         return false;
+
+      if (root.value == key)
+         return true;
+
+      //recursion left subtree
+      boolean left = find(root.left, key);
+
+      //if node is found, return
+      if(left)
+         return true;
+
+      // node is not found in left,
+      // so recur on right subtree /
+      boolean right = find(root.right, key);
+
+      return right;
    }
    
    
