@@ -51,7 +51,7 @@ class BinarySearchTree{
    public void preOrderTraversal(Node root){
       if (root == null)
          return;
-      
+
       //prints value of node
       System.out.print(root.value + " ");
 
@@ -81,14 +81,26 @@ class BinarySearchTree{
       //second recursion on right child
       inOrderTraversal(root.right);
    }
-   
-   
-   
-   /*
-   post-order traversal
-   */
+
+
+
+   /**
+    * Sorts tree in post order of insertion
+    * @param root Node to be sorted.
+    */
    public void postOrderTraversal(Node root){
-      //implement me
+      if (root == null)
+         return;
+
+      //first recursion on left child
+      postOrderTraversal(root.left);
+
+      //second recursion on right child
+      postOrderTraversal(root.right);
+      
+      //prints value of node
+      System.out.print(root.value + " ");
+
    }
    
    
