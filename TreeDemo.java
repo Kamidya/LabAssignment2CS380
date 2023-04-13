@@ -41,14 +41,25 @@ class BinarySearchTree{
       
       return root;
    }
-   
-   
-   
-   /*
-   pre-order traversal
-   */
+
+
+
+   /**
+    * Sorts tree in pre-order of insertion
+    * @param root Node to be sorted.
+    */
    public void preOrderTraversal(Node root){
-      //implement me
+      if (root == null)
+         return;
+      
+      //prints value of node
+      System.out.print(root.value + " ");
+
+      //first recursion on left child
+      preOrderTraversal(root.left);
+
+      //second recursion on right child
+      preOrderTraversal(root.right);
    }
 
    
@@ -61,13 +72,13 @@ class BinarySearchTree{
       if (root == null)
          return;
 
-      /* first recur on left child */
+      //first recursion on left child
       inOrderTraversal(root.left);
 
-      /* then print the data of node */
+      //prints value of node
       System.out.print(root.value + " ");
 
-      /* now recur on right child */
+      //second recursion on right child
       inOrderTraversal(root.right);
    }
    
